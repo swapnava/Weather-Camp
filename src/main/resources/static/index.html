@@ -1,0 +1,191 @@
+<html>
+    <head>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+        />
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="jquery.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="/favicon/02d.png"/>
+        <title>Welcome to WeatherCamp!</title>
+    </head>
+    <body>
+      <div class="container" id="title">
+                <img src="assets/icon.png" width="60" height="60" class="d-inline-block" alt="">
+                <h6 class="d-inline-block display-5" style="font-size: 32px; color: whitesmoke; text-shadow: 3px 3px 8px #3f3f3f;">Weather Camp</h6>
+              </div>
+            <form method="POST" class="form-inline" id="searchbox" style="padding-left: 7.5%; padding-top: 6%;">
+                <input class="form-control mr-sm-2" id="locationData" type="search" style="width: 235px; z-index: 7;" placeholder="Search location" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" id="searchbutton" style="z-index: 7;" type="button">Search</button>
+            </form>
+            <div class="container" style="position: absolute; left: 40%; top: 5%; z-index: 7; width: fit-content;">
+            <button class="btn btn-outline-light my-2 my-sm-0" id="Map_Assist" style="z-index: 7; margin: 10px;" type="button" onclick="location.href ='/mappage.html'">Map Assist</button>
+            <button class="btn btn-outline-light my-2 my-sm-0" data-toggle="modal" data-target="#Contact_Us" id="searchbutton" style="z-index: 7; margin: 10px;" type="button">Contact Us</button>
+            <button class="btn btn-outline-light my-2 my-sm-0" id="searchbutton" style="z-index: 7; margin: 10px;" type="button" onclick="location.replace('/')">Logout</button>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="min-width:400px ; max-width: 450px; position: absolute; left: 4%;top: 21%;box-shadow: 4px 4px 8px rgba(15, 15, 15, 0.568)">
+                <div class="card-header" id="location" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301); text-align: center;">London</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301); height: 200px;">
+                  <h5 class="card-title temperature" style="font-size: 28px; text-align: center;">29°C </h5>
+                  <p class="card-text description" id="param" style="text-align: center; font-size: 18px;">Light thunderstorms and rain</p>
+                  <p class="card-text cloudCover" id="param">Cloud Cover - 39%</p>
+                  <p class="card-text humidity" id="param">Humidity - 89%</p>
+                  <p class="card-text wind" id="param">Wind - 5 km/hr</p>
+                  <p class="card-text feels-like" id="param">Feels like 32°C</p>
+                  <p class="card-text aqi" id="parapo1">AQI</p>
+                  <p class="card-text aqi_category" id="parapo2">AQI category</p>
+                  <p class="card-text dominant_pollutant" id="parapo3">Dominant Pollutant - </p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" style="min-width:400px ; max-width: 450px; position: absolute; left: 37%;top: 21%;box-shadow: 3px 3px 8px rgba(58, 58, 58, 0.753);">
+                <div class="card-header" id="location" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301); text-align: center; font-size: 24px;">Health recommendation</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301); height: 200px;">
+                  <p class="card-text health_recom" id="param" style="text-align: justify; font-size: 13px; margin-bottom: 10px;">recommendation</p>
+                  <p class="card-text health_recom1" id="param" style="text-align: justify; font-size: 12px;">Irrspective of the AQI, wear a mask and carry sanitizer in this pandemic situation.</p>
+                </div>
+              </div>
+              <h6 class="d-inline-block display-5" id="forecast-heading">7 Day Forecast</h6>
+              <div class="card text-white bg-secondary mb-3" id="forecast">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day 1</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title day1-desc" style="font-size: 16px;">Light Drizzle</h5>
+                  <p class="card-text mintemp1" id="para">Min Temp - 27°C</p>
+                  <p class="card-text maxtemp1" id="para">Max Temp - 39°C</p>
+                  <p class="card-text wind1" id="para">Wind - 5 km/hr</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" id="forecast1">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day 2</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title day2-desc" style="font-size: 16px;">Sunny</h5>
+                  <p class="card-text mintemp2" id="para">Min Temp - 29°C</p>
+                  <p class="card-text maxtemp2" id="para">Max Temp - 31°C</p>
+                  <p class="card-text wind2" id="para">Wind - 5 km/hr</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" id="forecast2">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day 3</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title day3-desc" style="font-size: 16px;">Cloudy</h5>
+                  <p class="card-text mintemp3" id="para">Min Temp - 30°C</p>
+                  <p class="card-text maxtemp3" id="para">Max Temp - 31°C</p>
+                  <p class="card-text wind3" id="para">Wind - 2 km/hr</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" id="forecast3">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day 4</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title day4-desc" style="font-size: 16px;">Sunny</h5>
+                  <p class="card-text mintemp4" id="para">Min Temp - 29°C</p>
+                  <p class="card-text maxtemp4" id="para">Max Temp - 31°C</p>
+                  <p class="card-text wind4" id="para">Wind - 5 km/hr</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" id="forecast4">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day 5</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title day5-desc" style="font-size: 16px;">Thunderstorm</h5>
+                  <p class="card-text mintemp5" id="para">Min Temp - 28°C</p>
+                  <p class="card-text maxtemp5" id="para">Max Temp - 31°C</p>
+                  <p class="card-text wind5" id="para">Wind - 2 km/hr</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" id="forecast5">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day 6</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title day6-desc" style="font-size: 16px;">Light Drizzle</h5>
+                  <p class="card-text mintemp6" id="para">Min Temp - 27°C</p>
+                  <p class="card-text maxtemp6" id="para">Max Temp - 30°C</p>
+                  <p class="card-text wind6" id="para">Wind - 6 km/hr</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" id="forecast6">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day 7</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title day7-desc" style="font-size: 16px;">Light Drizzle</h5>
+                  <p class="card-text mintemp7" id="para">Min Temp - 27°C</p>
+                  <p class="card-text maxtemp7" id="para">Max Temp - 30°C</p>
+                  <p class="card-text wind7" id="para">Wind - 6 km/hr</p>
+                </div>
+              </div>
+            </div>
+
+            <h6 class="d-inline-block display-5" id="forecast-heading" style="position: absolute;left: 74.5%; top:11%">Historical Analytical Data</h6>
+              <div class="card text-white bg-secondary mb-3" id="historical1">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day1</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title historic1desc" style="font-size: 14px;">Light Drizzle</h5>
+                  <p class="card-text htempmin1" id="para1">Min Temp - 27°C</p>
+                  <p class="card-text htempmax1" id="para1">Max Temp - 39°C</p>
+                  <p class="card-text hwind1" id="para1">Wind - 5 km/hr</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" id="historical2">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day2</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title historic2desc" style="font-size: 14px;">Sunny</h5>
+                  <p class="card-text htempmin2" id="para1">Min Temp - 29°C</p>
+                  <p class="card-text htempmax2" id="para1">Max Temp - 31°C</p>
+                  <p class="card-text hwind2" id="para1">Wind - 5 km/hr</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" id="historical3">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day3</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title historic3desc" style="font-size: 14px;">Cloudy</h5>
+                  <p class="card-text htempmin3" id="para1">Min Temp - 30°C</p>
+                  <p class="card-text htempmax3" id="para1">Max Temp - 31°C</p>
+                  <p class="card-text hwind3" id="para1">Wind - 2 km/hr</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3" id="historical4">
+                <div class="card-header" style="font-weight: 500; background-color: rgba(34, 34, 34, 0.301);">Day4</div>
+                <div class="card-body" style="background-color:  rgba(34, 34, 34, 0.301);">
+                  <h5 class="card-title historic4desc" style="font-size: 14px;">Sunny</h5>
+                  <p class="card-text htempmin4" id="para1">Min Temp - 29°C</p>
+                  <p class="card-text htempmax4" id="para1">Max Temp - 31°C</p>
+                  <p class="card-text hwind4" id="para1">Wind - 5 km/hr</p>
+                </div>
+              </div>
+
+                <div class="image">
+                    <img src="./assets/backelement.png" alt="" style="width:700px; height: 400px;">
+                </div>
+                <div class="imageOne">
+                    <img src="./assets/backelement2.png" alt="" style="width: 600px; height: 350px;">
+                </div>
+                <div class="imageTwo">
+                    <img src="./assets/backelement3.png" alt="" style="width: 300px; height: 200px;">
+                </div>
+
+                <div class="modal fade" id="Contact_Us" tabindex="-1" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header" style="background-color: rgb(0, 50, 143);">
+                        <h5 class="modal-title" style="color: rgb(255, 255, 255);">We would love to hear from you!</h5>
+                      </div>
+                      <div class="modal-body" style="background-image: url(assets/topbackgrnd.jpg); background-size: fill;">
+                        <img src="assets/cloud_smile.png" alt="" srcset="" height="200px" width="200px" style="position: relative; left: 30%;">
+                          <p style="margin: 2px; text-align: center; color: whitesmoke;">Email us at - weathercamp.support@gmail.com</p>
+                          <p style="margin: 2px; text-align: center; color: whitesmoke;">Toll Free Number- 18700-1789-2456</p>
+                          <br>
+                          <p style="margin: 0;font-size: 12px; text-align: center; color: rgb(218, 218, 218);">This website is developed by - Swapnava Halder</p>
+                          </div>
+                      </div>
+                      <div class="modal-footer" style="background-color: rgb(0, 50, 143);">
+                        <button class="btn btn-outline-light my-2 my-sm-0" id="searchbutton"type="button" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <script src="script.js"></script>
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>
+

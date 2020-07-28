@@ -1,0 +1,94 @@
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url('/assets/104831.jpg');
+    background-size: cover;
+}
+
+#heading{
+    padding-top: 1.5%;
+    padding-left: 38%;
+}
+#heading-text{
+    color: rgb(233, 233, 233);
+    font-size: 32px;
+    text-shadow: 3px 3px 8px #000000;
+}
+
+.divider{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    background-color: rgba(255, 255, 255, 0.315);
+    width: 1px;
+    height: 450px;
+}
+
+.weather-data{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+}
+.city{
+    color: rgba(245, 245, 245, 0.897);
+}
+.desc{
+    color: rgba(245, 245, 245, 0.897);
+}
+.data{
+    margin: 2px;
+    padding: 2px;
+    color: rgba(245, 245, 245, 0.897);
+}
+.message{
+    position: absolute;
+    left: 38%;
+    bottom: 2.5%;
+    color: rgba(245, 245, 245, 0.384);
+}
+.aqidata{
+    text-align: center;
+    color: rgb(233, 233, 233);
+    font-size: 24px;
+}
+.login{
+    position: absolute;
+    padding-top: 15px;
+    top: 22%;
+    left: 65%;
+    width: 300px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.192);
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+}
+#Username{
+    width: 80%;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+#password{
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+#First_Name{
+    width: 80%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+#Last_Name{
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+#Register_Email{
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+#Register_password{
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}

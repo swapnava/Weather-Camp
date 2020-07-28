@@ -1,0 +1,226 @@
+body{
+    background-image: url(./assets/topbackgrnd.jpg);
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+}
+
+#title{
+    width: fit-content;
+    position: absolute;
+    left: 2%;
+    top: 3%;
+}
+
+@keyframes scroll {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:1;
+    }
+    0% {transform: translate(0px);}
+    100% {transform: translate(-240vh);}
+}
+@keyframes scroll2 {
+    0% {transform: translate(120px);}
+    100% {transform: translate(0vh);}
+}
+
+.image{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    opacity: 0.7;
+    z-index: 5;
+    animation: scroll2 40s linear infinite;
+    animation-direction: alternate-reverse;
+}
+
+.imageOne{
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    opacity: 0.4;
+    z-index: 5;
+    animation: scroll 80s linear infinite;
+    animation-direction: normal;
+}
+
+.imageTwo{
+    position: absolute;
+    top: 18%;
+    left: 70%;
+    opacity: 0.4;
+    z-index: 5;
+}
+
+#para {
+    margin: 0;
+    font-size: 12px;
+}
+
+#para1 {
+    margin: 0;
+    font-size: 10.5px;
+}
+
+#param{
+    margin: 0;
+    font-size: 14px;
+}
+
+#parapo1{
+    font-size: 14px;
+    position: absolute;
+    margin: 0;
+    top: 57%;
+    left: 55%;
+
+}
+#parapo2{
+    font-size: 16px;
+    position: absolute;
+    margin: 0;
+    top: 75%;
+    left: 55%;
+}
+#parapo3{
+    font-size: 14px;
+    position: absolute;
+    margin: 0;
+    top: 66%;
+    left: 55%;
+}
+#forecast{
+    width: 11%; 
+    height: 200px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:67%;
+    left: 10%;
+    z-index: 3;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+#forecast1{
+    width: 11%; 
+    height: 200px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:67%;
+    left: 21.5%;
+    z-index: 3;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+#forecast2{
+    width: 11%; 
+    height: 200px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:67%;
+    left: 33%;
+    z-index: 2;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+#forecast3{
+    width: 11%; 
+    height: 200px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:67%;
+    left: 44.5%;
+    z-index: 2;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+#forecast4{
+    width: 11%; 
+    height: 200px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:67%;
+    left: 56%;
+    z-index: 3;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+
+#forecast5{
+    width: 11%; 
+    height: 200px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:67%;
+    left: 67.5%;
+    z-index: 2;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+#forecast6{
+    width: 11%; 
+    height: 200px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:67%;
+    left: 79%;
+    z-index: 2;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+
+#historical1{
+    width: 10%; 
+    height: 150px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:17%;
+    left: 74.5%;
+    z-index: 3;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+#historical2{
+    width: 10%; 
+    height: 150px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:17%;
+    left: 85%;
+    z-index: 3;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+#historical3{
+    width: 10%; 
+    height: 150px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:40%;
+    left: 74.5%;
+    z-index: 2;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+#historical4{
+    width: 10%; 
+    height: 150px; 
+    max-height:253px; 
+    max-width: 60rem; 
+    position: absolute; 
+    top:40%;
+    left: 85%;
+    z-index: 2;
+    box-shadow: 3px 3px 5px rgba(82, 82, 82, 0.753);
+}
+
+#forecast-heading{
+    position: absolute;
+    color: white;
+    top: 61%;
+    left:10%;
+    font-size: 24px;
+    text-shadow: 2px 2px 5px black;
+}
