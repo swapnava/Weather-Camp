@@ -16,6 +16,6 @@ Technology Stack-
 - MySQL
 
 API used-
-~ OpenWeatherMap
-~ BreezoMeter
-~ Windy
+- OpenWeatherMap
+- BreezoMeter
+- Windy
