@@ -13,7 +13,7 @@ Technology Stack-
 - HTML, CSS, Bootstrap
 - Javascript, AJAX
 - Spring Boot
-- MySQL
+- Firebase
 
 API used-
 - OpenWeatherMap
