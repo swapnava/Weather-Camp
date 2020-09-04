@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
-        <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            body{
-                background-color: rgb(0, 0, 0);
-            }
-            #windy {
-                
-                width: 100%;
-                height: 650px;
-                z-index: 1;
-            }
-            #windy #logo-wrapper {
-                top: initial;
-                bottom: 100px;
-            }
-            #windy #logo-wrapper #logo {
-                size: 40px;
-                left: 94%;
-            }
-        </style>
-        <link rel="icon" type="image/png" href="/favicon/02d.png"/>
-    <title>WeatherCamp Map Assist</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+<script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+	background-color: rgb(0, 0, 0);
+}
+
+#windy {
+	width: 100%;
+	height: 745px;
+	z-index: 1;
+}
+
+#windy #logo-wrapper {
+	top: initial;
+	bottom: 100px;
+}
+
+#windy #logo-wrapper #logo {
+	size: 40px;
+	left: 94%;
+}
+</style>
+<link rel="icon" type="image/png" href="/favicon/02d.png" />
+<title>WeatherCamp Map Assist</title>
 </head>
 <body>
-    <div>
-        <img src="assets/icon.png" width="65" height="65" style="position: absolute; left: 39%;top: 2.5%; z-index: 5; display: inline-block;" alt="">
-        <h1 style="position: absolute; left: 43%; z-index: 5; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: lighter; color: whitesmoke; text-shadow: 3px 3px 8px #000000;">Weather Camp</h1>
-        <p style="position: absolute; left: 47%; top: 7%; z-index: 5; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: whitesmoke; text-shadow: 3px 3px 8px #000000;">Map Assist</p>
-        
-    </div>
-    <div id="windy"></div>
-    <script src="script.js"></script>
+	<div>
+		<img src="assets/icon.png" width="65" height="65"
+			style="position: absolute; left: 39%; top: 2.5%; z-index: 5; display: inline-block;"
+			alt="">
+		<h1
+			style="position: absolute; left: 43%; z-index: 5; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: lighter; color: whitesmoke; text-shadow: 3px 3px 8px #000000;">Weather
+			Camp</h1>
+		<p
+			style="position: absolute; left: 47%; top: 7%; z-index: 5; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: whitesmoke; text-shadow: 3px 3px 8px #000000;">Map
+			Assist</p>
+
+	</div>
+	<div id="windy"></div>
+	<script src="script.js"></script>
 </body>
 </html>

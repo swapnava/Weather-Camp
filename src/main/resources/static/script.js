@@ -236,7 +236,7 @@ function displayForecast(){
     day7wind.innerHTML = 'Precipitation : '+forecast.pop7+'%';
 }
 
-const AQIkey = '704bbf7dc7d740459179ecfe143e0cd2';
+const AQIkey = 'ef57302fb7544a9e8bf35c65ff9046ba';
 
 var pollution = {};
 
@@ -393,6 +393,25 @@ function displayPollution(){
 //     day4wind.innerHTML = 'Wind : '+historic.wind4+'km/hr';
 // }
 
+var firebaseConfig = {
+    apiKey: "AIzaSyDpqXQw0uvRgl-m2jA_nBRadQQ5xbY0Fgk",
+    authDomain: "weather-283116.firebaseapp.com",
+    databaseURL: "https://weather-283116.firebaseio.com",
+    projectId: "weather-283116",
+    storageBucket: "weather-283116.appspot.com",
+    messagingSenderId: "830261752215",
+    appId: "1:830261752215:web:95db64f24b95b2ddd654d2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+function logout(){
+	const auth = firebase.auth();
+	auth.signOut();
+    
+	location.replace("/");
+	
+}
 
 
 var options = {

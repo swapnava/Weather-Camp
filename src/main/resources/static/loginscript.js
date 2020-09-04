@@ -16,7 +16,7 @@ weather.temperature = {
     unit : "celsius"
 }
 
-const AQIkey = '704bbf7dc7d740459179ecfe143e0cd2';
+const AQIkey = 'ef57302fb7544a9e8bf35c65ff9046ba';
 
 var pollution = {};
 
@@ -100,3 +100,48 @@ function displayPollution(){
     aqius.innerHTML = 'AQI : '+pollution.aqius+' (US EPA)';
     aqidesc.innerHTML = pollution.description;
 }
+
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDpqXQw0uvRgl-m2jA_nBRadQQ5xbY0Fgk",
+    authDomain: "weather-283116.firebaseapp.com",
+    databaseURL: "https://weather-283116.firebaseio.com",
+    projectId: "weather-283116",
+    storageBucket: "weather-283116.appspot.com",
+    messagingSenderId: "830261752215",
+    appId: "1:830261752215:web:95db64f24b95b2ddd654d2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+const auth=firebase.auth();
+
+auth.setPersistence(firebase.auth.Auth.Persistence.NONE)
+.then(function register(){
+	
+	var email = document.getElementById("Register_Email");
+	var password = document.getElementById("Register_password");
+	
+	const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+	promise.catch(e => alert(e.message));
+	
+	alert("Registered Successfully!");
+})
+
+function login(){
+	
+	var email = document.getElementById("Username");
+	var password = document.getElementById("password");
+	
+	const promise = auth.signInWithEmailAndPassword(email.value, password.value);
+	promise.catch(e => alert(e.message));
+}
+
+auth.onAuthStateChanged(function(user){
+	if(user){
+		location.replace('/index.html');
+	}else{
+		alert("Incorrect Credentials!")
+	}
+});
